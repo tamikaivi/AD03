@@ -1,0 +1,75 @@
+<div class="bg-modal"></div>
+<div class="container-modal container-modal--{{ modalSize }}">
+    <h1 *ngIf="!hideTitle" class="modal-header u-flex u-flex-alg-center u-pos-relative">
+        <span style="color: rgb(var(--color-text))">{{ title }}</span>
+        <button *ngIf="showCloseModalButton" (click)="handleClose()">
+            <svg>
+                <use xlink:href="assets/svg/icons-app.svg#svg-close" />
+            </svg>
+        </button>
+    </h1>
+    <div class="modal-body">
+        <div class="modal-body__content">
+            <ng-container [ngTemplateOutlet]="template"> </ng-container>
+        </div>
+    </div>
+    <footer class="modal-footer" *ngIf="templateFooter">
+        <ng-container [ngTemplateOutlet]="templateFooter"> </ng-container>
+    </footer>
+</div>
+<div class="container-modal-confirm">
+    <ng-container [ngTemplateOutlet]="templateConfirm"> </ng-container>
+</div>
+<div class="container-modal-confirm-exit">
+    <div>
+        <div class="message-confirmation">
+            <h3>¿Está seguro de salir?</h3>
+            <p>Are you sure you want to delete this contact? This action cannot be undone!</p>
+        </div>
+        <div class="u-flex u-flex-jus-around">
+            <amira-button
+                [paintButton]="{ title: 'Cancelar', color: 'red-outline' }"
+                (clickBtn)="closeExitAndOpenModal()"
+            ></amira-button>
+            <amira-button
+                [paintButton]="{ title: 'Aceptar', color: 'green-outline' }"
+                (clickBtn)="cleanComponent()"
+            ></amira-button>
+        </div>
+    </div>
+</div>
+
+<!-- <div *ngIf="arrayTemplates && arrayTemplates.length>0" class="modal_responsive__info-background">
+    <div  class="modal_responsive__info">
+        <ng-container [ngTemplateOutlet]="arrayTemplates[indexArrayTemplate]"> </ng-container>
+        <div class="u-flex u-flex-center">
+            <amira-button [paintButton]="{title:'Aceptar',color:'green-outline'}"></amira-button>
+        </div>
+    </div>
+</div> -->
+<div class="container-modal-array">
+    <!-- <h1 *ngIf="!hideTitle" class="modal-header u-flex u-flex-alg-center u-pos-relative">
+        <span style="color:rgb(var(--color-text));">{{ title }}</span>
+        <button (click)="handleClose()">
+            <svg>
+                <use xlink:href="assets/svg/icons-app.svg#svg-close" />
+            </svg>
+        </button>
+    </h1> -->
+    <ng-container *ngIf="arrayTemplates && arrayTemplates.length > 0">
+        <div class="modal-body">
+            <div class="modal-body__content">
+                <ng-container [ngTemplateOutlet]="arrayTemplates[indexArrayTemplate]"> </ng-container>
+            </div>
+        </div>
+
+        <footer class="modal-footer">
+            <div class="u-flex u-flex-center">
+                <amira-button
+                    (clickBtn)="openModalAndCloseTemplateArray()"
+                    [paintButton]="{ title: 'Aceptar', color: 'green-outline' }"
+                ></amira-button>
+            </div>
+        </footer>
+    </ng-container>
+</div>
