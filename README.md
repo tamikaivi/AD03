@@ -1,27 +1,40 @@
-# AD03
+# 📦Practical Evaluation: AD03
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+## 🚀Project Description
 
-## Development server
+A web application must be developed that allows basic CRUD operations to be performed on
+elements.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🛠️Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js (v14 or higher): [Download Node.js](https://nodejs.org)
+- Angular CLI (v12):
 
-## Build
+```bash
+npm install -g @angular/cli@12
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚦Instructions to Run the Project
 
-## Running unit tests
+#### 1. Clone the Repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/tamikaivi/AD03
+cd AD03
+```
 
-## Running end-to-end tests
+#### 2. Install Dependencies
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+## ▶️Running the Project
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng serve
+```
+
+The application will be available at: http://localhost:4200
