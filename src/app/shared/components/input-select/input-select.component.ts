@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-select',
   templateUrl: './input-select.component.html',
-  // styles: [':host{display:contents}'], // Makes component host as if it was not there, can offer less css headaches. Use @HostBinding class approach for easier overrides.
-  // host: { class: 'contents' },
+  styleUrls: ['./input-select.component.scss'],
 })
 export class InputSelectComponent {
-  // @HostBinding('class') protected readonly class = 'contents'; // Makes component host as if it was not there, can offer less css headaches. Assumes .contents{display:contents} css class exits
-  // constructor() {}
+  @Input() control: any;
+  selectedOption: string = '';
+  options = [
+    { value: 'opcion1', viewValue: 'Opción 1' },
+    { value: 'opcion2', viewValue: 'Opción 2' },
+    { value: 'opcion3', viewValue: 'Opción 3' },
+  ];
 }

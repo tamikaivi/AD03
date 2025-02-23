@@ -2,17 +2,17 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { StoryFnAngularReturnType } from '@storybook/angular/dist/client/types';
 
-import { InputCheckboxComponent } from './input-checkbox.component';
+import { TagComponent } from './tag.component';
 
-type ComponentWithCustomControls = InputCheckboxComponent; // & {};
+type ComponentWithCustomControls = TagComponent; // & {};
 
 const meta: Meta<ComponentWithCustomControls> = {
   // TODO: Make sure this title path is correct, uncomment tile, then remove this comment. OR remove both comment and title
-  // title: 'Components/Input Checkbox',
-  component: InputCheckboxComponent,
+  // title: 'Components/Tag',
+  component: TagComponent,
   // decorators: [moduleMetadata({ imports: [] }), applicationConfig({ providers: [ importProvidersFrom() ]})],
   parameters: {
-    docs: { description: { component: `InputCheckbox` } },
+    docs: { description: { component: `Tag` } },
     // layout: 'fullscreen',
   },
   argTypes: {
@@ -29,7 +29,7 @@ const meta: Meta<ComponentWithCustomControls> = {
 };
 export default meta;
 
-export const InputCheckbox: StoryObj<ComponentWithCustomControls> = {
+export const Tag: StoryObj<ComponentWithCustomControls> = {
   render: (args): StoryFnAngularReturnType => ({ props: args }),
   // play: async ({ canvasElement }) => { const canvasElement = within(canvasElement) },
 }

@@ -1,3 +1,8 @@
-<pre>
-  app-input-checkbox
-</pre>
+<label>
+  <input
+    (click)="$event.stopPropagation()"
+    [formControl]="control"
+    type="checkbox"
+    name="checkboxExample"
+  />
+</label>

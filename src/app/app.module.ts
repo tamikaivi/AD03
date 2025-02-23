@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { Routes } from '@angular/router';
 //import { LibComponentsModule } from 'ad03components'; // Asegúrate de que el nombre coincida
 
 @NgModule({
