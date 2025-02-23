@@ -6,6 +6,7 @@ import { TagModule } from './components/tag/tag.module';
 import { ButtonModule } from './components/button/button.module';
 import { ModalModule } from './components/modal/modal.module';
 import { InputModule } from './components/input/input.module';
+import { SearchModule } from './components/search/search.module';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import { InputModule } from './components/input/input.module';
     ButtonModule,
     ModalModule,
     InputModule,
+    SearchModule,
   ],
   exports: [
     CardModule,
@@ -26,6 +28,7 @@ import { InputModule } from './components/input/input.module';
     ButtonModule,
     ModalModule,
     InputModule,
+    SearchModule,
   ],
   providers: [],
 })

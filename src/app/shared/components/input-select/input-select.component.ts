@@ -7,10 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class InputSelectComponent {
   @Input() control: any;
+  @Input() optionList: Array<any> | null = [];
+  @Input() valueLabel: string = '';
+  @Input() valueCode: string = '';
   selectedOption: string = '';
-  options = [
-    { value: 'opcion1', viewValue: 'Opción 1' },
-    { value: 'opcion2', viewValue: 'Opción 2' },
-    { value: 'opcion3', viewValue: 'Opción 3' },
-  ];
 }
