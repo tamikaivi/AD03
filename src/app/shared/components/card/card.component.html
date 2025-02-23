@@ -1,4 +1,23 @@
 <app-input-checkbox [item]="data" [control]="control"> </app-input-checkbox>
-{{ data.title }}
-<app-tag></app-tag>
-<app-button (clickBtn)="delete(); $event.stopPropagation()"></app-button>
+<div style="display: flex; flex-direction: column">
+  <span>
+    {{ data.title }}
+  </span>
+  <span>
+    {{ data.description }}
+  </span>
+  <div style="display: flex">
+    <span style="font-size: smaller; color: var(--tag-gray)">
+      {{ label }} :
+    </span>
+    <span>
+      {{ data[valueCodeDate] | date : "yyyy*MM*dd HH|mm|ss" }}
+    </span>
+  </div>
+</div>
+
+<app-tag [tagValue]="tagValue" [tagCode]="tagCode"></app-tag>
+<app-button
+  [label]="'x'"
+  (clickBtn)="delete(); $event.stopPropagation()"
+></app-button>

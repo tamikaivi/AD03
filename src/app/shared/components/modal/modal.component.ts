@@ -22,13 +22,10 @@ export class ModalComponent {
     this.close.emit();
   }
   saveModal() {
-    console.log('SAVED modal');
     this.save.emit();
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes.isOpen) {
-      console.log('isOpen has changed:', changes.isOpen.currentValue);
-      // Aquí puedes agregar lógica para cuando isOpen cambie
     }
   }
 }

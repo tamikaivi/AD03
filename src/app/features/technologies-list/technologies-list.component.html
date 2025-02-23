@@ -1,11 +1,25 @@
 <app-search></app-search>
-<!-- Componente del buscador -->
 
-<div style="display: flex; flex-direction: column">
+<div
+  style="
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--secondary-bg);
+    width: 700px;
+    padding: 2rem;
+  "
+>
   <ng-container *ngFor="let item of items$ | async">
     <app-card
       [data]="item"
+      [tagCode]="item.status === '1' ? 'tag-red' : 'tag-gray'"
+      [label]="item.update_date ? 'Updated' : 'Created'"
+      [valueCodeDate]="item.update_date ? 'update_date' : 'creation_date'"
       [control]="formTecnologies.controls.selected"
+      [tagValue]="searchDescription(item)"
       (click)="formTecnologies.reset(item); updateModal()"
       (deletebtn)="formTecnologies.reset(item); delete()"
     ></app-card>
@@ -17,7 +31,10 @@
   (close)="closeModal()"
   (save)="saveModal()"
 >
-  <form [formGroup]="formTecnologies">
+  <form
+    [formGroup]="formTecnologies"
+    style="display: flex; flex-direction: column"
+  >
     <app-input [control]="formTecnologies.controls.title"></app-input>
     <app-input [control]="formTecnologies.controls.description"></app-input>
     <app-input-select
@@ -39,8 +56,9 @@
 >
   <app-button
     [badge]="true"
+    [label]="'share'"
     (clickBtn)="share()"
     [badgeNumber]="selectedItemsCount$ | async"
   ></app-button>
-  <app-button (clickBtn)="add()"></app-button>
+  <app-button [label]="'+'" (clickBtn)="add()"></app-button>
 </div>
