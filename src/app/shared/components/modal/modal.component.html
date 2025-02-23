@@ -1,9 +1,20 @@
 <div class="modal-overlay" *ngIf="isOpen">
   <div class="modal">
-    <h2>{{ actionType === typeAction.ADD ? "Add Modal" : "Update Modal" }}</h2>
+    <div style="display: flex; justify-content: space-between">
+      <h2
+        style="border-bottom: 1px solid var(--tag-gray); padding-bottom: 10px"
+      >
+        {{ actionType === typeAction.ADD ? "Add Modal" : "Update Modal" }}
+      </h2>
 
-    <app-button (clickBtn)="closeModal()"></app-button>
+      <app-button (clickBtn)="closeModal()" [label]="'x'"></app-button>
+    </div>
+
     <ng-content></ng-content>
-    <app-button (clickBtn)="saveModal()"></app-button>
+    <app-button
+      style="display: flex; justify-content: end"
+      (clickBtn)="saveModal()"
+      [label]="'Save'"
+    ></app-button>
   </div>
 </div>

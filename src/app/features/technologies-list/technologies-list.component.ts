@@ -27,12 +27,8 @@ export class TechnologiesListComponent {
   modalOpen = false;
   actionType: TypeAction = TypeAction.ADD;
   statusOptions = [
-    { id: 1, description: Status.FrontEnd },
-    { id: 2, description: Status.BackEnd },
-    { id: 3, description: Status.FullStack },
-    { id: 4, description: Status.DevOps },
-    { id: 5, description: Status.QA },
-    { id: 6, description: Status.Architect },
+    { id: '1', description: Status.FrontEnd },
+    { id: '2', description: Status.BackEnd },
   ];
   constructor(private _fb: FormBuilder, private store: Store<AppState>) {
     this.formTecnologies = this._fb.group({
@@ -60,13 +56,11 @@ export class TechnologiesListComponent {
     });
   }
   ngOnInit() {
-    // selectItemsBySearch
     this.store.dispatch(ItemActions.loadItems());
   }
   share() {
     this.selectedItems$.pipe(take(1)).subscribe((items) => {
-      console.log('Compartiendo estos ítems:', items);
-      // Lógica adicional para compartir
+      console.log('Share items:', items);
     });
   }
   add() {
@@ -93,12 +87,10 @@ export class TechnologiesListComponent {
     }
 
     this.closeModal();
-    console.log('SAVED', this.formTecnologies.value);
   }
   updateItem(item: Item) {
-    console.log('EDIT item', item);
     const updatedItem = { ...item, update_date: new Date().toISOString() };
-    console.log('EDIT', updatedItem);
+
     this.store.dispatch(ItemActions.updateItem({ item: updatedItem }));
   }
   openModal() {
@@ -111,16 +103,16 @@ export class TechnologiesListComponent {
 
   updateModal() {
     this.actionType = TypeAction.UPDATE;
-
-    console.log('UPDATED', this.formTecnologies.value);
     this.openModal();
   }
-  deleteModal() {
-    console.log('DELETED', this.formTecnologies.value);
-  }
+
   delete() {
-    console.log('delete');
     const id = this.formTecnologies.value.id;
     this.store.dispatch(ItemActions.deleteItem({ id: id }));
+  }
+  searchDescription(event: any) {
+    const item = this.statusOptions.find((item) => item.id === event.status);
+
+    return item ? item.description : undefined;
   }
 }

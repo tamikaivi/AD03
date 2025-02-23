@@ -1,0 +1,14 @@
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px 5px 10px;
+  background-color: var(--tag-red);
+  border-radius: 5px;
+  &-red {
+    background-color: var(--tag-red);
+  }
+  &-gray {
+    background-color: var(--tag-gray);
+  }
+}

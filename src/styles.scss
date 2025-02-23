@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./styles//themes/colors-var.scss";
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-bg) var(--secondary-bg);
+}
 html,
 body {
   margin: 0;
