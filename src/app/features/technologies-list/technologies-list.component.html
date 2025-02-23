@@ -1,0 +1,36 @@
+<div style="display: flex; flex-direction: column">
+  <ng-container
+    *ngFor="
+      let technology of [
+        { id: 1, name: 'Spring Boot' },
+        { id: 2, name: 'React' },
+        { id: 3, name: 'Vue' }
+      ]
+    "
+  >
+    <app-card
+      [data]="technology"
+      (click)="updateModal()"
+      (deletebtn)="delete()"
+    ></app-card>
+  </ng-container>
+</div>
+<app-modal [isOpen]="modalOpen" (close)="closeModal()" (save)="saveModal()">
+  <form [formGroup]="formTecnologies">
+    <app-input [control]="formTecnologies.controls.title"></app-input>
+    <app-input [control]="formTecnologies.controls.description"></app-input>
+    <app-input-select></app-input-select>
+  </form>
+</app-modal>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  "
+>
+  <app-button [badge]="true" (clickBtn)="share()"></app-button>
+  <app-button (clickBtn)="add()"></app-button>
+</div>

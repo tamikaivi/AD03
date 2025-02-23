@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  // styles: [':host{display:contents}'], // Makes component host as if it was not there, can offer less css headaches. Use @HostBinding class approach for easier overrides.
-  // host: { class: 'contents' },
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  // @HostBinding('class') protected readonly class = 'contents'; // Makes component host as if it was not there, can offer less css headaches. Assumes .contents{display:contents} css class exits
-  // constructor() {}
+  @Input() data: any;
+  @Output() deletebtn = new EventEmitter<any>();
+  constructor() {}
+  delete() {
+    console.log('delete');
+    this.deletebtn.emit();
+  }
 }
