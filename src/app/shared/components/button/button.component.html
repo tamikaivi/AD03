@@ -1,3 +1,25 @@
-<pre>
-  app-button
-</pre>
+<button
+  style="background-color: red; margin: 10px"
+  (click)="clickBtn.emit($event)"
+>
+  {{ "BUTON" }}
+  <span
+    *ngIf="badge"
+    style="
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      height: 1.1rem;
+      display: flex;
+      width: 1.1rem;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-radius: 20px;
+
+      top: -20px;
+      right: 0px;
+    "
+    >{{ badgeNumber }}</span
+  >
+</button>

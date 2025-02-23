@@ -1,0 +1,46 @@
+<app-search></app-search>
+<!-- Componente del buscador -->
+
+<div style="display: flex; flex-direction: column">
+  <ng-container *ngFor="let item of items$ | async">
+    <app-card
+      [data]="item"
+      [control]="formTecnologies.controls.selected"
+      (click)="formTecnologies.reset(item); updateModal()"
+      (deletebtn)="formTecnologies.reset(item); delete()"
+    ></app-card>
+  </ng-container>
+</div>
+<app-modal
+  [actionType]="actionType"
+  [isOpen]="modalOpen"
+  (close)="closeModal()"
+  (save)="saveModal()"
+>
+  <form [formGroup]="formTecnologies">
+    <app-input [control]="formTecnologies.controls.title"></app-input>
+    <app-input [control]="formTecnologies.controls.description"></app-input>
+    <app-input-select
+      [optionList]="statusOptions"
+      [valueLabel]="'description'"
+      [valueCode]="'id'"
+      [control]="formTecnologies.controls.status"
+    ></app-input-select>
+  </form>
+</app-modal>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  "
+>
+  <app-button
+    [badge]="true"
+    (clickBtn)="share()"
+    [badgeNumber]="selectedItemsCount$ | async"
+  ></app-button>
+  <app-button (clickBtn)="add()"></app-button>
+</div>

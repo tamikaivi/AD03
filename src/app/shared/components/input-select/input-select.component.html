@@ -1,3 +1,6 @@
-<pre>
-  app-input-select
-</pre>
+<label for="select">Seleccione una opción:</label>
+<select id="select" [formControl]="control">
+  <option *ngFor="let option of optionList" [value]="option[valueCode]">
+    {{ option[valueLabel] }}
+  </option>
+</select>

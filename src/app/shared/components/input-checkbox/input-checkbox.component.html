@@ -1,3 +1,6 @@
-<pre>
-  app-input-checkbox
-</pre>
+<input
+  type="checkbox"
+  [checked]="item.selected"
+  (click)="$event.stopPropagation()"
+  (change)="toggleSelection($event)"
+/>

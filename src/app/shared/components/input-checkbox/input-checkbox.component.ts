@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/core/storage/app.state';
+import * as ItemActions from '../../../core/storage/actions/item.actions';
 
 @Component({
   selector: 'app-input-checkbox',
   templateUrl: './input-checkbox.component.html',
-  // styles: [':host{display:contents}'], // Makes component host as if it was not there, can offer less css headaches. Use @HostBinding class approach for easier overrides.
-  // host: { class: 'contents' },
+  styleUrls: ['./input-checkbox.component.scss'],
 })
 export class InputCheckboxComponent {
-  // @HostBinding('class') protected readonly class = 'contents'; // Makes component host as if it was not there, can offer less css headaches. Assumes .contents{display:contents} css class exits
-  // constructor() {}
+  @Input() item: any;
+  @Input() control: any;
+  constructor(private store: Store<AppState>) {}
+  toggleSelection(event: any) {
+    console.log('toggleSelection', event.target.checked);
+    const updatedItem = { ...this.item, selected: event.target.checked };
+    this.store.dispatch(ItemActions.updateItem({ item: updatedItem }));
+  }
 }

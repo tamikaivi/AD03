@@ -1,3 +1,15 @@
-<pre>
-  app-input
-</pre>
+<input
+  (ngModelChange)="sendInputChange($event)"
+  (keydown.enter)="search($event)"
+  [required]="label ? required : false"
+  [placeholder]="placeholder"
+  [formControl]="control"
+  [type]="type"
+  [min]="minValue"
+  [max]="maxValue"
+  [readonly]="readonly"
+  (input)="input.emit($event)"
+  (focus)="onfocus.emit($event)"
+  (focusout)="focusout.emit($event)"
+  #inputField
+/>

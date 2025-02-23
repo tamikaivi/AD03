@@ -1,3 +1,4 @@
-<pre>
-  app-card
-</pre>
+<app-input-checkbox [item]="data" [control]="control"> </app-input-checkbox>
+{{ data.title }}
+<app-tag></app-tag>
+<app-button (clickBtn)="delete(); $event.stopPropagation()"></app-button>
