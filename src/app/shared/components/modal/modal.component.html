@@ -1,6 +1,6 @@
 <div class="modal-overlay" *ngIf="isOpen">
   <div class="modal">
-    <h2>Modal Title</h2>
+    <h2>{{ actionType === typeAction.ADD ? "Add Modal" : "Update Modal" }}</h2>
 
     <app-button (clickBtn)="closeModal()"></app-button>
     <ng-content></ng-content>

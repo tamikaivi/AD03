@@ -1,8 +1,6 @@
-<label>
-  <input
-    (click)="$event.stopPropagation()"
-    [formControl]="control"
-    type="checkbox"
-    name="checkboxExample"
-  />
-</label>
+<input
+  type="checkbox"
+  [checked]="item.selected"
+  (click)="$event.stopPropagation()"
+  (change)="toggleSelection($event)"
+/>

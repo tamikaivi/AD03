@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CardComponent {
   @Input() data: any;
+  @Input() control: any;
   @Output() deletebtn = new EventEmitter<any>();
   constructor() {}
   delete() {

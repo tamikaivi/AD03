@@ -1,6 +1,6 @@
 <label for="select">Seleccione una opción:</label>
 <select id="select" [formControl]="control">
-  <option *ngFor="let option of options" [value]="option.value">
-    {{ option.viewValue }}
+  <option *ngFor="let option of optionList" [value]="option[valueCode]">
+    {{ option[valueLabel] }}
   </option>
 </select>
