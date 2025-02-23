@@ -27,7 +27,7 @@ export class SearchComponent {
       this.control.setValue(null);
     }
     const searchValue: any = this.control.value;
-    console.log('CAMFIO', searchValue);
+
     this.store.dispatch(ItemActions.setSearchTerm(searchValue));
   }
 }

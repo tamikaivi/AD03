@@ -13,7 +13,6 @@ export class InputCheckboxComponent {
   @Input() control: any;
   constructor(private store: Store<AppState>) {}
   toggleSelection(event: any) {
-    console.log('toggleSelection', event.target.checked);
     const updatedItem = { ...this.item, selected: event.target.checked };
     this.store.dispatch(ItemActions.updateItem({ item: updatedItem }));
   }
