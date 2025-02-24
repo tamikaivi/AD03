@@ -6,6 +6,8 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { TypeAction } from 'src/app/core/enums/type-action';
+import { TypeButton } from 'src/app/core/enums/type-button';
+import { TypeButtonSize } from 'src/app/core/enums/type-button-size';
 
 @Component({
   selector: 'app-modal',
@@ -18,6 +20,8 @@ export class ModalComponent {
   @Output() close = new EventEmitter<void>();
   @Output() save = new EventEmitter<void>();
   typeAction = TypeAction;
+  typeButton = TypeButton;
+  typeButtonSize = TypeButtonSize;
   closeModal() {
     this.close.emit();
   }

@@ -1,14 +1,17 @@
 <button
+  class="button-icon button-bg"
   (click)="clickBtn.emit($event)"
-  [ngClass]="getButtonClass()"
-  [ngClass]="getButtonSizeClass()"
+  [class.button-icon--small]="size === typeButtonSize.SMALL"
+  [class.button-icon--medium]="size === typeButtonSize.MEDIUM"
+  [class.button-bg--circle]="type === typeButton.FILL_ROUND"
+  [class.button-bg--rectangle]="type === typeButton.RECTANGLE"
 >
   {{ label }}
   <span
     *ngIf="badge"
     style="
-      background-color: var(--green);
-      color: white;
+      background-color: var(--badged-bg);
+
       padding: 10px;
       height: 1.1rem;
       display: flex;
@@ -24,9 +27,9 @@
   >
 
   <svg
-    style="width: 15px; height: 15px; fill: var(--tag-gray)"
     *ngIf="icon"
     class="icon"
+    [class.icon--small]="size === typeButtonSize.SMALL"
   >
     <use [attr.xlink:href]="'assets/svg/icons-app.svg#' + icon" />
   </svg>

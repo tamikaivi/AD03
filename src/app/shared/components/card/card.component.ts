@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TypeButtonSize } from 'src/app/core/enums/type-button-size';
 
 @Component({
   selector: 'app-card',
@@ -13,6 +14,7 @@ export class CardComponent {
   @Input() valueCodeDate: any;
   @Input() control: any;
   @Output() deletebtn = new EventEmitter<any>();
+  typeButtonSize = TypeButtonSize;
   constructor() {}
   delete() {
     this.deletebtn.emit();

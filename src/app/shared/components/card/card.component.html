@@ -18,11 +18,12 @@
 </div>
 
 <app-tag
-  style="margin-right: 25px; margin-left: 20px"
+  style="margin-right: 45px; margin-left: 20px"
   [tagValue]="tagValue"
   [tagCode]="tagCode"
 ></app-tag>
 <app-button
+  [size]="typeButtonSize.SMALL"
   [icon]="'svg-circle-x'"
   (clickBtn)="delete(); $event.stopPropagation()"
 ></app-button>

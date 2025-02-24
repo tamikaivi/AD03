@@ -7,6 +7,7 @@
     overflow-x: hidden;
     flex-direction: column;
     width: 100%;
+    min-height: 620px;
     background-color: var(--secondary-bg);
     width: 700px;
     padding: 2rem;
@@ -50,19 +51,23 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 75px;
+    right: 60px;
   "
 >
+  <ng-container *ngIf="selectedItemsCount$ | async as count">
+    <app-button
+      [badge]="true"
+      [icon]="'svg-share'"
+      (clickBtn)="share()"
+      [type]="typeButton.FILL_ROUND"
+      [badgeNumber]="count"
+      *ngIf="count > 0"
+    ></app-button>
+  </ng-container>
+
   <app-button
-    [badge]="true"
-    [label]="'share'"
-    [icon]="'svg-share'"
-    (clickBtn)="share()"
-    [type]="typeButton.FILL_ROUND"
-    [badgeNumber]="selectedItemsCount$ | async"
-  ></app-button>
-  <app-button
+    style="margin-top: 20px"
     [icon]="'svg-add'"
     [type]="typeButton.FILL_ROUND"
     (clickBtn)="add()"

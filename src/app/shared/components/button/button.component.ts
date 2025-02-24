@@ -11,7 +11,7 @@ export class ButtonComponent {
   @Input() icon = '';
   @Input() badge = false;
   @Input() type: TypeButton = TypeButton.NO_FILL;
-  @Input() size: TypeButtonSize = TypeButtonSize.SMALL;
+  @Input() size: TypeButtonSize = TypeButtonSize.LARGE;
   @Input() label = '';
   @Input() badgeNumber: number | null = null;
   @Output() clickBtn = new EventEmitter<any>();

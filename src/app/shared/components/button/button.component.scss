@@ -1,25 +1,41 @@
-/* Botón circular */
-.btn-circle {
-  background-color: var(--green);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  color: white;
+.icon {
+  width: 25px;
+  height: 25px;
+  fill: var(--tag-gray);
+  &--small {
+    height: 15px !important;
+    width: 15px !important;
+  }
 }
 
-/* Botón rectangular */
-.btn-rectangle {
-  background-color: var(--green);
-  padding: 10px 20px;
-  border-radius: 8px;
+.button-icon {
+  min-width: 57px;
+  height: 57px;
+  &--small {
+    height: 25px !important;
+    min-width: 0px;
+  }
+  &--medium {
+    min-width: 70px;
+    height: 27px;
+    font-size: small;
+  }
 }
-
-/* Botón por defecto */
-.btn-default {
+.button-bg {
   background-color: transparent;
-  padding: 5px 10px;
-  //border: 1px solid lightgray;
-  color: black;
+  &--circle {
+    background-color: var(--green);
+    border-radius: 50%;
+    color: white;
+    svg {
+      fill: white;
+    }
+  }
+  &--rectangle {
+    border-radius: 10px;
+    color: white;
+    background-color: var(--green);
+  }
 }
 button {
   border: none;
