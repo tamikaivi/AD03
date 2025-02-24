@@ -1,0 +1,31 @@
+.custom-select {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: white;
+  font-size: 16px;
+  appearance: none;
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-container::after {
+  content: "⮟";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+}

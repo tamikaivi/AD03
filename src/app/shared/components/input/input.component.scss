@@ -1,0 +1,47 @@
+/* Estilos generales para inputs y selects en Angular sin frameworks */
+
+/* Estilo para el input de texto con ícono de edición */
+.custom-input {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.custom-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: inherit;
+  outline: none;
+}
+
+.custom-input .icon {
+  font-size: 20px;
+  color: #ffcc00;
+}
+
+/* Estilo para el textarea con descripción debajo */
+.custom-textarea {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  resize: vertical;
+}
+
+.custom-textarea-description {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 4px;
+}

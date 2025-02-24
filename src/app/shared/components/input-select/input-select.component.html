@@ -1,5 +1,7 @@
-<select id="select" [formControl]="control">
-  <option *ngFor="let option of optionList" [value]="option[valueCode]">
-    {{ option[valueLabel] }}
-  </option>
-</select>
+<div class="custom-select-container">
+  <select class="custom-select" id="select" [formControl]="control">
+    <option *ngFor="let option of optionList" [value]="option[valueCode]">
+      {{ option[valueLabel] }}
+    </option>
+  </select>
+</div>
