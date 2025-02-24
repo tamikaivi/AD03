@@ -1,6 +1,6 @@
-<input
-  type="text"
-  placeholder="Search..."
-  [formControl]="control"
-  (ngModelChange)="sendInputChange($event)"
-/>
+<app-input
+  (inputChange)="sendInputChange($event)"
+  [placeholder]="'Search...'"
+  [control]="control"
+>
+</app-input>

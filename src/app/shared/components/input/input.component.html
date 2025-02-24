@@ -1,4 +1,5 @@
 <input
+  style="background-color: var(--bg-card)"
   (ngModelChange)="sendInputChange($event)"
   (keydown.enter)="search($event)"
   [required]="label ? required : false"
