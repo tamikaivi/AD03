@@ -1,6 +1,12 @@
-<input
-  type="checkbox"
-  [checked]="item.selected"
-  (click)="$event.stopPropagation()"
-  (change)="toggleSelection($event)"
-/>
+<div class="container" (click)="$event.stopPropagation()">
+  <div class="round" (click)="$event.stopPropagation()">
+    <input
+      type="checkbox"
+      [checked]="item.selected"
+      [id]="'checkbox-' + item.id"
+      (change)="toggleSelection($event)"
+      (click)="$event.stopPropagation()"
+    />
+    <label [for]="'checkbox-' + item.id"></label>
+  </div>
+</div>

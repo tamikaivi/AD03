@@ -1,4 +1,3 @@
-// item.selectors.ts
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { Item } from '../../models/item.model';
 
@@ -21,7 +20,7 @@ export const selectItemById = (itemId: string) =>
 export const selectItemsBySearch = (searchTerm: string) =>
   createSelector(selectAllItems, (items: Item[]) => {
     if (!searchTerm) {
-      return items; // Si no hay término de búsqueda, devuelve toda la lista
+      return items;
     }
     return items.filter(
       (item) =>

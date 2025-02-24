@@ -1,0 +1,53 @@
+/* Botón circular */
+.btn-circle {
+  background-color: var(--green);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+}
+
+/* Botón rectangular */
+.btn-rectangle {
+  background-color: var(--green);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* Botón por defecto */
+.btn-default {
+  background-color: transparent;
+  padding: 5px 10px;
+  //border: 1px solid lightgray;
+  color: black;
+}
+button {
+  border: none;
+  //color: white;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  &-btn-rectangle {
+    background-color: var(--green);
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  &-btn-circle {
+    background-color: var(--green);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+  }
+  &.btn-default {
+    background-color: transparent;
+    padding: 5px 10px;
+    //border: 1px solid lightgray;
+    color: black;
+  }
+}

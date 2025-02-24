@@ -12,8 +12,6 @@ import { FormControl } from '@angular/forms';
 export class SearchComponent {
   control: FormControl;
 
-  // Inicializar el FormControl
-
   constructor(private store: Store<AppState>) {
     this.control = new FormControl('');
   }

@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import * as ItemSelectors from '../../core/storage/selectors/item.selectors';
 import { take } from 'rxjs/operators';
 import { TypeAction } from 'src/app/core/enums/type-action';
+import { TypeButton } from 'src/app/core/enums/type-button';
 
 @Component({
   selector: 'app-technologies-list',
@@ -30,6 +31,7 @@ export class TechnologiesListComponent {
     { id: '1', description: Status.FrontEnd },
     { id: '2', description: Status.BackEnd },
   ];
+  typeButton = TypeButton;
   constructor(private _fb: FormBuilder, private store: Store<AppState>) {
     this.formTecnologies = this._fb.group({
       id: [null],

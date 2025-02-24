@@ -57,8 +57,14 @@
   <app-button
     [badge]="true"
     [label]="'share'"
+    [icon]="'svg-share'"
     (clickBtn)="share()"
+    [type]="typeButton.FILL_ROUND"
     [badgeNumber]="selectedItemsCount$ | async"
   ></app-button>
-  <app-button [label]="'+'" (clickBtn)="add()"></app-button>
+  <app-button
+    [icon]="'svg-add'"
+    [type]="typeButton.FILL_ROUND"
+    (clickBtn)="add()"
+  ></app-button>
 </div>

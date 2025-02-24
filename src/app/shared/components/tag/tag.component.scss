@@ -12,3 +12,7 @@
     background-color: var(--tag-gray);
   }
 }
+:host {
+  display: flex;
+  justify-content: flex-start;
+}

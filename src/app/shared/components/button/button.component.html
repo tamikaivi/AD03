@@ -1,6 +1,7 @@
 <button
-  style="background-color: red; margin: 10px"
   (click)="clickBtn.emit($event)"
+  [ngClass]="getButtonClass()"
+  [ngClass]="getButtonSizeClass()"
 >
   {{ label }}
   <span
@@ -21,4 +22,12 @@
     "
     >{{ badgeNumber }}</span
   >
+
+  <svg
+    style="width: 15px; height: 15px; fill: var(--tag-gray)"
+    *ngIf="icon"
+    class="icon"
+  >
+    <use [attr.xlink:href]="'assets/svg/icons-app.svg#' + icon" />
+  </svg>
 </button>

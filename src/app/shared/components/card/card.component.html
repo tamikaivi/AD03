@@ -1,14 +1,15 @@
-<app-input-checkbox [item]="data" [control]="control"> </app-input-checkbox>
-<div style="display: flex; flex-direction: column">
-  <span>
+<app-input-checkbox style="margin-right: 8px" [item]="data" [control]="control">
+</app-input-checkbox>
+<div style="display: flex; flex-direction: column" class="card-content">
+  <span class="card-title">
     {{ data.title }}
   </span>
   <span>
-    {{ data.description }}
+    {{ data.description | slice : 0 : 55 }}
   </span>
   <div style="display: flex">
-    <span style="font-size: smaller; color: var(--tag-gray)">
-      {{ label }} :
+    <span style="margin-right: 3px; font-size: smaller; color: var(--tag-gray)">
+      {{ label + ": " }}
     </span>
     <span>
       {{ data[valueCodeDate] | date : "yyyy*MM*dd HH|mm|ss" }}
@@ -16,8 +17,12 @@
   </div>
 </div>
 
-<app-tag [tagValue]="tagValue" [tagCode]="tagCode"></app-tag>
+<app-tag
+  style="margin-right: 25px; margin-left: 20px"
+  [tagValue]="tagValue"
+  [tagCode]="tagCode"
+></app-tag>
 <app-button
-  [label]="'x'"
+  [icon]="'svg-circle-x'"
   (clickBtn)="delete(); $event.stopPropagation()"
 ></app-button>
